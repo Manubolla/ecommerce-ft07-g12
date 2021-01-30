@@ -97,7 +97,9 @@ export const getCategoryById = (id) => {
 export const editCategory = (payload, id) => {
   return function (dispatch) {
     axios
-      .put(`${REACT_APP_URL}/products/category/${id}`, payload)
+      .put(`${REACT_APP_URL}/products/category/${id}`, payload, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then((res) =>
         dispatch({ type: A.EDIT_CATEGORY, payload: { payload: res.data } })
       );

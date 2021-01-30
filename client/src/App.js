@@ -69,12 +69,12 @@ function App() {
 				payload: storedProducts.length || 0,
 			});
 		}
-		return () => {
+/* 		return () => {
 			axios.get(`${REACT_APP_URL}/auth/logout`, { headers:{Authorization: `Bearer ${token}`}});
                 dispatch({ type: "ADD_DATA_USER", payload: null });
                 dispatch({type: 'SET_CART_COUNTER', payload: 0})
                 dispatch({type: "ADD_CART_PRODUCT", payload: []})
-		}
+		} */
 	}, [dispatch]);
 
 	/* Renderizado y rutas */

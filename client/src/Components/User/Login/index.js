@@ -86,9 +86,14 @@ export const UserLogin = () => {
         window.localStorage.setItem("token", token);
         return handleCart(user, token);
       } else {
-        window.localStorage.removeItem("Google");
+        const {
+          data: { user, token },
+        } = await axios.post(`${REACT_APP_URL}/auth/login`, {email: email, password: googleId});
+        window.localStorage.setItem("token", token);
+        return handleCart(user, token)
+      /*   window.localStorage.removeItem("Google");
         window.localStorage.removeItem("token");
-        swal("Verifica tu email y contraseña e intenta de nuevo por favor");
+        swal("Verifica tu email y contraseña e intenta de nuevo por favor"); */
       }
     } catch (err) {
       console.log(err);

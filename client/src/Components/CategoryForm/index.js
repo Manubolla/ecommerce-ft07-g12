@@ -87,7 +87,7 @@ const CategoryForm = () => {
 								type="text"
 								placeholder="Descripción"
 								input={input.description}
-								maxLength="100"
+								maxLength="200"
 								onChange={handleChange}
 							/>
 						</div>

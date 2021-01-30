@@ -6,9 +6,9 @@ import { Carousel } from "rsuite";
 const ProductsFeatured = () => {
   const productsFeatured = useSelector((state) => state.products);
 
-  const productRev = productsFeatured?.filter(
-    (produ) =>  produ.stock > 0
-  ).reverse();
+  const productRev = productsFeatured
+    ?.filter((produ) => produ.stock > 0)
+    .reverse();
 
   /* let id = 1; */
   return (
@@ -18,7 +18,9 @@ const ProductsFeatured = () => {
         <p>Llevate el tuyo</p>
       </div>
       <div className="product__container">
-        <Carousel autoplay className="custom-slider">
+        <Carousel
+          /* autoplay autoplayinterval={10000} */ className="custom-slider"
+        >
           {productsFeatured &&
             productRev.map((produc, i) => {
               if (i < 4) {
@@ -26,7 +28,9 @@ const ProductsFeatured = () => {
               } else return null;
             })}
         </Carousel>
-        <Carousel autoplay className="custom-slider">
+        <Carousel
+          /* autoplay autoplayinterval={10000} */ className="custom-slider"
+        >
           {productsFeatured &&
             productRev.map((produc, i) => {
               if (i > 4 && i <= 8) {
@@ -34,7 +38,9 @@ const ProductsFeatured = () => {
               } else return null;
             })}
         </Carousel>
-        <Carousel autoplay className="custom-slider">
+        <Carousel
+          /* autoplay autoplayinterval={10000} */ className="custom-slider"
+        >
           {productsFeatured &&
             productRev.map((produc, i) => {
               if (i > 8 && i <= 12) {
@@ -42,7 +48,9 @@ const ProductsFeatured = () => {
               } else return null;
             })}
         </Carousel>
-        <Carousel autoplay className="custom-slider">
+        <Carousel
+          /* autoplay autoplayinterval={10000} */ className="custom-slider"
+        >
           {productsFeatured &&
             productRev.map((produc, i) => {
               if (i > 12 && i <= 16) {

@@ -70,8 +70,10 @@ export const UserLogin = () => {
   };
   const responseGoogle = async (response) => {
     try {
+      console.log(response)
       const google = response.profileObj;
       window.localStorage.setItem("Google", JSON.stringify(google));
+      console.log(google)
       let { givenName, email, googleId } = google;
       const {
         data: { result: user, token },
@@ -186,8 +188,8 @@ export const UserLogin = () => {
               </button>
             )}
             buttonText="Login"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
+            onSuccess={(response) => responseGoogle(response)}
+            onFailure={(response) => responseGoogle(response)}
             cookiePolicy={"single_host_origin"}
           />
         </div>
